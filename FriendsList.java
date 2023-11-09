@@ -18,7 +18,7 @@ public class FriendsList extends FileHandler<Friend> {
                 String[] pair = line.split("]");
                 String key = pair[0].substring(1);
                 String value = pair.length == 1 ? "" : pair[1]; // in case the value is empty
-
+             try {
                 switch (key) {
                     case "FULLNAME":
                         friend.setFullName(value);
@@ -31,10 +31,19 @@ public class FriendsList extends FileHandler<Friend> {
                         break;
                     default:
                         throw new RuntimeException("Invalid key: " + key);
-                }
+                }}
+             // I created an instance of the SystemExceptionHandler class.
+             catch (RuntimeException re) {
+                 SystemExceptionHandler handler = new SystemExceptionHandler();
+                 handler.handleException(re);
+             }
+
+
             } else {
                 throw new RuntimeException("Invalid input: friend data should either start with < or [");
+
             }
+
         }
         return friend;
     }
@@ -83,7 +92,11 @@ public class FriendsList extends FileHandler<Friend> {
                         System.out.println("Successfully added new friend");
                     } catch (IOException e) {
                         System.out.println("Unable to add new friend: " + e.getMessage());
-                    }
+                        // I created an instance of the SystemExceptionHandler class.
+                        SystemExceptionHandler handler = new SystemExceptionHandler();
+                            handler.handleException(e);
+                        }
+
                     break;
                 case 3:
                     return;
