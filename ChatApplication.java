@@ -49,6 +49,6 @@ class SystemExceptionHandler {
              PrintWriter printWriter = new PrintWriter(fileWriter)) {
             printWriter.println(new java.util.Date().toString() + " - " + e.toString());
         } catch (IOException ioe) {
-            ioe.printStackTrace();
+            ioe.printStackTrace() ;
         }
     }}
