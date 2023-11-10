@@ -37,6 +37,9 @@ public class Chat extends FileHandler<Message> {
                         System.out.println("Successfully sent message");
                     } catch (IOException e) {
                         System.out.println("Unable to send message: " + e.getMessage());
+                        // I created an instance of the SystemExceptionHandler class.
+                            SystemExceptionHandler handler = new SystemExceptionHandler();
+                            handler.handleException(e);
                     }
                     break;
                 case 3:

@@ -27,6 +27,8 @@ public abstract class FileHandler <T>{
     public abstract String encode(T data);
 
     public void loadData() throws IOException {
+
+
         BufferedReader reader = new BufferedReader(new FileReader(this.path));
         int linesRead = 0;
         StringBuilder batch = new StringBuilder();
@@ -41,7 +43,9 @@ public abstract class FileHandler <T>{
                 batch.delete(0, batch.capacity());
             }
         }
+
     }
+
 
     public void appendData(T content) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(this.path, true));

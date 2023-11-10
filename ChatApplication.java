@@ -1,6 +1,10 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class ChatApplication {
+public class
+ChatApplication {
     public static void main(String[] args) {
         Chat privateChat = new Chat("files/Donut[AFK].log", "Private Chat");
         Chat publicChat = new Chat("files/Eurakarte.log", "Public Chat");
@@ -37,3 +41,14 @@ public class ChatApplication {
         }
     }
 }
+/* A  CustomExceptionHandler class that catch
+ all types of exceptions and writes them in system.log file */
+class SystemExceptionHandler {
+    public void handleException(Exception e) {
+        try (FileWriter fileWriter = new FileWriter("system.log", true);
+             PrintWriter printWriter = new PrintWriter(fileWriter)) {
+            printWriter.println(new java.util.Date().toString() + " - " + e.toString());
+        } catch (IOException ioe) {
+            ioe.printStackTrace() ;
+        }
+    }}
