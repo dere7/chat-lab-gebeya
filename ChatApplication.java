@@ -41,8 +41,11 @@ ChatApplication {
         }
     }
 }
-/* A  CustomExceptionHandler class that catch
- all types of exceptions and writes them in system.log file */
+/*
+Elizabeth hagos  
+Email Hagoselizabeth06@gmail.com
+A  CustomExceptionHandler class that catch
+all types of exceptions and writes them in system.log file */
 class SystemExceptionHandler {
     public void handleException(Exception e) {
         try (FileWriter fileWriter = new FileWriter("system.log", true);
