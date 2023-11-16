@@ -1,5 +1,6 @@
 @Dereje and @Elizabeth.
 I expect claases for SystemExceptionHandler and CustomExceptionHandler. Please review you code. 
+When you collaborate , its very important to communicate with each other. 
 @Elizabeth, check how Dereje added those sections to your code.  
  --SystemExceptionHandler will catch all types of exceptions and writes them in system.log file
 --CustomExceptionHandler will handle only those exception related to your chat application message formats and menu’s.
