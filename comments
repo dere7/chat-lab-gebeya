@@ -23,8 +23,6 @@ Extend PublicChat or implement Chat       --->  create PrivateChat class
 in your Class but create instances of them and write your logs. 
 
 
-6. You dont have to create separate classes for each friend in the friend list. You can use function like ".split()" to extract names from the list of friends. 
-
 
 
 Check this link for a good example of how to design your classes, OO Design
